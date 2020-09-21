@@ -6,7 +6,7 @@
 
 ### 特徵說明
 
-有關財務的特徵: ['salary', 'deferral_payments', 'total_payments', 'loan_advances', 'bonus', 'restricted_stock_deferred', 'deferred_income', 'total_stock_value', 'expenses', 'exercised_stock_options', 'other', 'long_term_incentive', 'restricted_stock', 'director_fees'] (單位皆為美元)。更詳細的特徵說明請參考 enron61702insiderpay.pdf 的最後一頁(請至Data頁面參考該PDF檔)
+有關財務的特徵: ['salary', 'deferral_payments', 'total_payments', 'loan_advances', 'bonus', 'restricted_stock_deferred', 'deferred_income', 'total_stock_value', 'expenses', 'exercised_stock_options', 'other', 'long_term_incentive', 'restricted_stock', 'director_fees'] (單位皆為美元)。更詳細的特徵說明請參考 enron61702insiderpay.pdf 的最後一頁
 
 有關 email 的特徵: ['to_messages', 'email_address', 'from_poi_to_this_person', 'from_messages', 'from_this_person_to_poi', 'shared_receipt_with_poi'] (除了 email_address，其餘皆為次數)
 
@@ -16,7 +16,7 @@
 
 ### 關鍵問題
 
-如果你是第一次實作機器學習專案，一開始可能會有些迷惘，不曉得該從何著手，我們提供了一系列的問題，這些都是一個機器學習專案中必須要回答的問題，可以試著從這些問題開始！
+如果你是第一次實作機器學習專案，一開始可能會有些迷惘，不曉得該從何著手，我們提供了一系列的問題，這些都是一個機器學習專案中必須要回答的問題，可以試著從[這些問題](https://docs.google.com/document/d/1XxV5_gN0E4oEYvk4ovYwepjNxCAMdAFqcSacHMrd7U0/edit)開始！
 
 ### 專案結束後你可以學會
 
