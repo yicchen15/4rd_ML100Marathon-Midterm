@@ -33,13 +33,13 @@
 步驟：
 1. 數據清洗/前處理
 * 缺失值處理: 填補 0、中位數、平均值、眾數，缺失資料比例過高則捨去該欄位
-* 離群值處理/去偏態
+* 離群值處理/去偏態 (未用到)
 * 特徵轉換(編碼): 0/1 (用在是否有email)
 * 特徵縮放：標準化、MinMax
-* 特徵選擇
+* 特徵選擇(未用到)
 
 2. 模型選擇：
-* Linear Regression: 基本評估指標
+* Logistic Regression: 基本評估指標
 * Lasso: LR+L1
 * Ridge: LR+L2
 * Gradient Boosting Regressor :
@@ -51,8 +51,7 @@
 * Blending: 
  將不同模型的預測值加權合成，權重和為1。單一個別模型效果好，且模型差異大，能有更好表現。
 
-3. 數據切分：K-Fold
-選擇K=5，4份訓練、1份驗證。
+3. 數據切分：4份訓練、1份驗證。
 
 4. 評估指標：競賽使用AUC(Area Under Curve) 
 預測結果分別有 True Positive、False Negative、False Positive、True Negative 四種情況，
@@ -65,7 +64,7 @@ ROC曲線的橫坐標為false positive rate(FPR)，縱坐標為true positive rat
 AUC為ROC曲線下面積，其值屆於0~1之間，表示分類器正確判斷陽性樣本的機率高於陰性樣本之機率，就是AUC值越大的分類器其正確率越高。
 
 5.上傳結果(AUC):
-* Linear Regression: 0.62857
+* Logistic Regression: 0.67857
 * Lasso: 0.67857
 * Ridge: 0.73571
 * Gradient Boosting Regressor: 0.69285
@@ -75,3 +74,7 @@ AUC為ROC曲線下面積，其值屆於0~1之間，表示分類器正確判斷�
   - rf-xgbst-ridge: 0.79285
   - lasso-ridge-rf: 0.80714
   - lr+gdbt+rf： 0.77142
+
+6. 結論：
+在未經過特徵篩選，僅做其他數據前處理(缺失值、特徵縮放、文字運用獨熱編碼)，再透過Blending模型，AUC可拿到0.8左右的結果。
+若要再提高分數，可運用相關係數、Lasso、SelectKBest套件等方式進行特徵篩選；此外，適當去除離群值也可能有幫助。
