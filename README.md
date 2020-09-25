@@ -39,9 +39,31 @@
 * 特徵選擇
 
 2. 模型選擇：
-
+* Linear Regression: 基本評估指標
+* Lasso: LR+L1
+* Ridge: LR+L2
+* Gradient Boosting Regressor :透過集成-Boosting，由後面生成的樹修正前面的樹預測不好/錯誤的地方。
+* Random Forest Regressor: 具高解釋性的模型，目標使訊息增益最大化，透過集成-Bagging將多棵樹模型結果組合在一起
+* xgboost: 在gradient boosting方法加 L2 Regression
+* Blending: 將不同模型的預測值加權合成，權重和為1。單一個別模型效果好，且模型差異大，能有更好表現。
 
 3. 數據切分：K-Fold
-選擇K=
+選擇K=5，4份訓練、1份驗證。
 
-4. 評估指標：官網使用AUC(Area Under Curve)
+4. 評估指標：競賽使用AUC(Area Under Curve)
+Precision = $frac{tp}{tp+fp}$ 、 Recall = $frac{tp}{tp+fn}$
+
+ROC曲線的橫坐標為false positive rate(FPR)，縱坐標為true positive rate(TPR)，
+AUC為ROC曲線下面積，最大值為1。
+
+5.上傳結果(AUC):
+* Linear Regression: 0.62857
+* Lasso: 0.67857
+* Ridge: 0.73571
+* Gradient Boosting Regressor: 0.69285
+* Random Forest Regressor: 0.76785
+* xgboost: 0.75000
+* Blending
+  - rf-xgbst-ridge: 0.79285
+  - lasso-ridge-rf: 0.80714
+  - lr+gdbt+rf： 0.77142
