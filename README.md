@@ -32,9 +32,9 @@
 
 步驟：
 1. 數據清洗/前處理
-* 缺失值填補
+* 缺失值處理: 填補 0、中位數、平均值、眾數，缺失資料比例過高則捨去該欄位
 * 離群值處理/去偏態
-* 特徵轉換(編碼)
+* 特徵轉換(編碼): 0/1 (用在是否有email)
 * 特徵縮放：標準化、MinMax
 * 特徵選擇
 
@@ -55,11 +55,14 @@
 選擇K=5，4份訓練、1份驗證。
 
 4. 評估指標：競賽使用AUC(Area Under Curve) 
+預測結果分別有 True Positive、False Negative、False Positive、True Negative 四種情況，
+可藉由Confusion Matrix 得到以下幾種指標：
 > Precision = TP/(TP+FP)、 Recall = TP/(TP+FN) 
 
 ROC曲線的橫坐標為false positive rate(FPR)，縱坐標為true positive rate(TPR)，
 > FPR = FP/(FP+TN)、TPR = TP/(TP+FN)
-AUC為ROC曲線下面積，最大值為1。
+
+AUC為ROC曲線下面積，其值屆於0~1之間，表示分類器正確判斷陽性樣本的機率高於陰性樣本之機率，就是AUC值越大的分類器其正確率越高。
 
 5.上傳結果(AUC):
 * Linear Regression: 0.62857
