@@ -51,7 +51,7 @@
 選擇K=5，4份訓練、1份驗證。
 
 4. 評估指標：競賽使用AUC(Area Under Curve)
-Precision = $frac{tp}{tp+fp}$ 、 Recall = $frac{tp}{tp+fn}$
+$ Precision = frac{tp}{tp+fp} $ 、$ Recall = frac{tp}{tp+fn} $
 
 ROC曲線的橫坐標為false positive rate(FPR)，縱坐標為true positive rate(TPR)，
 AUC為ROC曲線下面積，最大值為1。
